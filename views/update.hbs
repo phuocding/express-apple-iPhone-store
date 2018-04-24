@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+      <h2>Update feature</h2>
+
+      {{#each data}}
+      <form action="/updatePhones/{{ this.id }}" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="model">Model</label>
+            <input type="text" class="form-control" name="model" placeholder="Model name" value="{{ this.model }}">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="memory">Memory</label>
+            <input type="text" class="form-control" name="memory" placeholder="Memory (Gb)" value="{{ this.memory }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="color">Color</label>
+          <input type="text" class="form-control" name="color" placeholder="Color" value="{{ this.color }}">
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input type="text" class="form-control" name="price" placeholder="Price" value="{{ this.price }}">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="images">Image sources</label>
+            <input type="text" class="form-control" name="images" value="{{ this.images }}">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      {{/each}}
+
+    </div>
+
+    <div class="col-md-2"></div>
+
+  </div>
+</div>
